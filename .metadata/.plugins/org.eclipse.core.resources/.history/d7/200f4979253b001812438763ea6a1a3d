@@ -5,7 +5,6 @@ import java.awt.Point;
 public class SADecrypt {
 	
 	private static GenKey gk = new GenKey();
-	@SuppressWarnings("static-access")
 	private static String parent = gk.keyGen();
 	private String[][] table = this.cipherTable(parent);
 	private String fuString;
@@ -13,7 +12,6 @@ public class SADecrypt {
 	private String decodedOutput = decode(output);
 	
 	public SADecrypt(){
-		//this.printTable(table);
 		this.printDecode(decodedOutput);
 	}
 	
@@ -87,7 +85,10 @@ public class SADecrypt {
  		    System.out.println(dec);
  		  }
 	
- 	private void printTable(String[][] printedTable){
+	private void printTable(String[][] printedTable){
+	    System.out.println("This is the cipher table from the given keyword.");
+	    System.out.println();
+	    
 	    for(int i = 0; i < 5; i++){
 	      for(int j = 0; j < 5; j++){
 	        System.out.print(printedTable[i][j]+" ");

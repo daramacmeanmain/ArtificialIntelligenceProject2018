@@ -13,7 +13,6 @@ public class SADecrypt {
 	private String decodedOutput = decode(output);
 	
 	public SADecrypt(){
-		//this.printTable(table);
 		this.printDecode(decodedOutput);
 	}
 	
@@ -88,6 +87,9 @@ public class SADecrypt {
  		  }
 	
  	private void printTable(String[][] printedTable){
+	    System.out.println("This is the cipher table from the given keyword.");
+	    System.out.println();
+	    
 	    for(int i = 0; i < 5; i++){
 	      for(int j = 0; j < 5; j++){
 	        System.out.print(printedTable[i][j]+" ");

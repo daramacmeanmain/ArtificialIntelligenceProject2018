@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DecryptFile extends FileUpload{
 	
-	/*public static Runner r = new Runner();
+	public static Runner r = new Runner();
 	
 	@SuppressWarnings("static-access")
 	private String keyword = r.keyWord;
@@ -98,6 +98,6 @@ public class DecryptFile extends FileUpload{
 	 		  public void printDecode(String dec){
 	 		    System.out.println("Decoded text:");
 	 		    System.out.println(dec);
-	 		  }*/
+	 		  }
 
 }

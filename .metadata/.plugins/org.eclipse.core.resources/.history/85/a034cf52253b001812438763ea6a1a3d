@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Runner {
 	//private static String[][] printedTable;
 	
-	//public static String keyWord = "THEQUICKBROWNFXMPDVLAZYGS";
+	public static String keyWord = "THEQUICKBROWNFXMPDVLAZYGS";
 	//public static String[][] table;
 	//public static DecryptFile df = new DecryptFile();
 	//public static 
@@ -19,7 +19,7 @@ public class Runner {
 		
 		String filename = "";
 		fu.readFile(filename);
-		//sad.outputDecrypt();
+		//df.outputDecrypt();
 		
 	}
 

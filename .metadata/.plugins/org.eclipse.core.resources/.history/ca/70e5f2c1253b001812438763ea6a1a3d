@@ -19,7 +19,7 @@ public class Runner {
 		
 		String filename = "";
 		fu.readFile(filename);
-		//sad.outputDecrypt();
+		//df.outputDecrypt();
 		
 	}
 

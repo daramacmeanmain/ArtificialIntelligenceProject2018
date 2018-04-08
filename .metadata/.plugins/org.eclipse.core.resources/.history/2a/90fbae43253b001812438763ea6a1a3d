@@ -5,21 +5,19 @@ import java.io.IOException;
 public class Runner {
 	//private static String[][] printedTable;
 	
-	//public static String keyWord = "THEQUICKBROWNFXMPDVLAZYGS";
-	//public static String[][] table;
+	public static String keyWord = "THEQUICKBROWNFXMPDVLAZYGS";
+	public static String[][] table;
 	//public static DecryptFile df = new DecryptFile();
-	//public static 
-	//public static 
+	//public static SADecrypt sad = new SADecrypt();
+	public static FileUpload fu = new FileUpload();
 	
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
-		FileUpload fu = new FileUpload();
-		SADecrypt sad = new SADecrypt();
 		
 		String filename = "";
 		fu.readFile(filename);
-		//sad.outputDecrypt();
+		//df.outputDecrypt();
 		
 	}
 

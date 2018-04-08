@@ -13,7 +13,7 @@ public class SADecrypt {
 	private String decodedOutput = decode(output);
 	
 	public SADecrypt(){
-		//this.printTable(table);
+		this.printTable(table);
 		this.printDecode(decodedOutput);
 	}
 	
