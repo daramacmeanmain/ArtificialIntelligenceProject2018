@@ -1,4 +1,4 @@
-package ie.gmit.sw.ai;
+/*package ie.gmit.sw.ai;
 
 public class TestRunner {
 
@@ -8,3 +8,4 @@ public class TestRunner {
 	}
 
 }
+*/

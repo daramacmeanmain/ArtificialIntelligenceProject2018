@@ -15,17 +15,25 @@ public class FileUpload {
 	
 	public static Map<String, Double> fMap = new HashMap<String, Double>();
 
-	public List<String> readFileURL() throws IOException{
+	public static List<String> readFileURL() throws IOException{
 		
-		//dummy url test data
-		URL url = new URL("http://www.puzzlers.org/pub/wordlists/pocket.txt");
-		BufferedReader in = new BufferedReader(
+		//method unfinished
+		//correct functionality not implemented
+		
+		System.out.println("Enter URL to load");
+		Scanner s = new Scanner(System.in);
+		String userURL = s.next();
+		
+		URL url = new URL(userURL);
+		BufferedReader br = new BufferedReader(
 		new InputStreamReader(url.openStream()));
 		String next;
 		
-		while((next = in.readLine()) != null){
+		while((next = br.readLine()) != null){
 			System.out.println(next);
 		}
+		br.close();
+		s.close();
 		
 		return null;
 	}
@@ -33,7 +41,13 @@ public class FileUpload {
 	@SuppressWarnings("resource")
 	public static String readFile(String filename){
 		
-		filename = "src/hobbitV2.txt";
+		//user chooses the name and path of a text file
+		System.out.println("Enter full name of text file");
+		Scanner s = new Scanner(System.in);
+		String userFile = s.next();
+		filename = userFile;
+		
+		//file read into a string
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader(filename));
@@ -57,15 +71,14 @@ public class FileUpload {
 		
 	}
 	
+	//uploads 4grams.txt into a map to be used for fitness scoring
 	public Map<String, Double> fourGram() throws IOException{
 		
-		Stream<String> lines = Files.lines(Paths.get("src/4grams.txt"));
+		Stream<String> lines = Files.lines(Paths.get("4grams.txt"));
 		
 		Map<String, Double> fMap = lines.map(line -> line.split(" ")).collect(Collectors.toMap(line -> line[0], line -> Double.parseDouble(line[1])));
 		
 		lines.close();
-		
-		//System.out.println(fMap.get("THER"));
 		
 		return fMap;
 	}

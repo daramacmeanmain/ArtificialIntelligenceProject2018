@@ -4,6 +4,8 @@ import java.awt.Point;
 
 public class PlayfairTable {
 	
+	//playfair table adapted from https://github.com/mckennapsean/code-examples/blob/master/Java/Playfair.java
+	
 	private static GenKey gk = new GenKey();
 	@SuppressWarnings("static-access")
 	private static String parent = gk.keyGen();
@@ -17,6 +19,7 @@ public class PlayfairTable {
 		this.printDecode(decodedOutput);
 	}
 	
+	//generates cipher table from the random key
 	public String[][] cipherTable(String key){
 		 String[][] playFairTable = new String [5][5];
 		 String keyString = parent;
@@ -41,12 +44,11 @@ public class PlayfairTable {
 		      }
 		    }
 		 
-		 //System.out.println(playFairTable);
-		 
 		return playFairTable;
 		 
 	 }
 	
+	//decodes the encrypted text
 	private String decode(String out){
 	    String decoded = "";
 	    for(int i = 0; i < out.length() / 2; i++){
@@ -69,31 +71,27 @@ public class PlayfairTable {
 	      }
 	      decoded = decoded + table[r1][c1] + table[r2][c2];
 	    }
+	    
 	    return decoded;
 	  }
 
 		private Point getPoint(char c){
-	    Point pt = new Point(0,0);
-	    for(int i = 0; i < 5; i++)
-	      for(int j = 0; j < 5; j++)
-	        if(c == table[i][j].charAt(0))
-	          pt = new Point(i,j);
-	    return pt;
+			
+		    Point pt = new Point(0,0);
+		    for(int i = 0; i < 5; i++)
+		      for(int j = 0; j < 5; j++)
+		        if(c == table[i][j].charAt(0))
+		          pt = new Point(i,j);
+		    return pt;
 		}
 		  
-		  // prints results (encoded and decoded)
+	//print the decoded text
 	  public void printDecode(String dec){
 	    System.out.println("Decoded text:");
 	    System.out.println(dec);
 	  }
-	  
-	  public String getDecode(){
-		  
-		 String decryptedText = decodedOutput;
-		  
-		return decryptedText;
-	  }
 	
+	//output the cipher table of the decryption key
 	private void printTable(String[][] printedTable){
 	    for(int i = 0; i < 5; i++){
 	      for(int j = 0; j < 5; j++){
@@ -102,6 +100,14 @@ public class PlayfairTable {
 	      System.out.println();
 	    }
 	    System.out.println();
+	  }
+	
+	//get the decoded text for fitness score
+	 public String getDecode(){
+		  
+		 String decryptedText = decodedOutput;
+		  
+		return decryptedText;
 	  }
 
 }

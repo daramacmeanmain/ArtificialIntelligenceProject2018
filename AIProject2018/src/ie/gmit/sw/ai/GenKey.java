@@ -5,31 +5,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GenKey {
 	
-	//public static String parent = keyGen();
-	//public static String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+	//public static final String parent = keyGen();
 	
-	public static final String parent = keyGen();
-    
-   /* public static String keyGen(){
-		
-    	int a = 97;
-        int z = 122;
-        int length = 25;
-        Random r = new Random();
-        StringBuilder buffer = new StringBuilder(length);
-        
-        for (int i = 0; i < length; i++) {
-            int randomLimitedInt = a + (int) 
-              (r.nextFloat() * (z - a + 1));
-            buffer.append((char) randomLimitedInt);
-        }
-        
-        String randomString = buffer.toString();
-        String generatedString = randomString.toUpperCase();
-        
-		return generatedString;
-	}*/
-	
+	//adaption of Fisher–Yates Shuffle to shuffle through 25 letter alphabet
 	public static String keyGen() {
 		 String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 		 int index;
@@ -43,6 +21,7 @@ public class GenKey {
 				 key[index] ^= key[i];
 			 }
 		 }
+		 
 		 return new String(key);
 	}
 
