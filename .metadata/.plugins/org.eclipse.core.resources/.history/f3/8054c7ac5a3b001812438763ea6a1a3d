@@ -1,13 +1,11 @@
 package ie.gmit.sw.ai;
 
-import java.io.IOException;
-
 //import java.io.IOException;
 
 public class CipherBreaker {
 
 	@SuppressWarnings("static-access")
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		FileUpload fu = new FileUpload();
 		//PlayfairTable pf = new PlayfairTable();
 		SADecrypt s = new SADecrypt();
@@ -15,7 +13,7 @@ public class CipherBreaker {
 		String filename = "";
 		fu.readFile(filename);
 		
-		fu.fourGram();
+		fu.printMap();
 		
 		//s.scoreFitness(null);
 

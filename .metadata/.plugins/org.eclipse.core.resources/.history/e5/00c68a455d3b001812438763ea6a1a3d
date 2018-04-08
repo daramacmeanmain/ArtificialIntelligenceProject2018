@@ -17,29 +17,15 @@ public class SADecrypt {
 		//this.transitions = transitions;
 	}
 	
-	public double scoreFitness(String fitness){
+	public void scoreFitness(String fitness){
 		String decryptText = pt.getDecode();
 		double score = 0;
 		long total = 4224127912L;
-		String gram;
-		double gramVal;
-		//double childScore;
-		
-		
 		
 		for(int i = 0; i < decryptText.length(); i = i + 4){
-			gram = decryptText.substring(i, i + 4);
-			gramVal = fu.fMap.get(gram);
-			
-			if(gramVal == 0){
-				gramVal = 1.0;
-			}
-			
-			score += Math.log10(gramVal / total);
+			String gram = decryptText.substring(i, i + 4);
+			//double gramVal = fu.fMap.get(gram);
 		}
-		
-		
-		return score;
 		
 		
 	}

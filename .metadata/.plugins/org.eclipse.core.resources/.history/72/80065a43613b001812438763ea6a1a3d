@@ -17,13 +17,12 @@ public class SADecrypt {
 		//this.transitions = transitions;
 	}
 	
-	public double scoreFitness(String fitness){
+	public void scoreFitness(String fitness){
 		String decryptText = pt.getDecode();
 		double score = 0;
 		long total = 4224127912L;
 		String gram;
 		double gramVal;
-		//double childScore;
 		
 		
 		
@@ -37,9 +36,6 @@ public class SADecrypt {
 			
 			score += Math.log10(gramVal / total);
 		}
-		
-		
-		return score;
 		
 		
 	}

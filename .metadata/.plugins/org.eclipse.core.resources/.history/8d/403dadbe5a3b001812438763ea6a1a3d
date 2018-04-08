@@ -15,7 +15,7 @@ public class CipherBreaker {
 		String filename = "";
 		fu.readFile(filename);
 		
-		fu.fourGram();
+		//fu.fourGram();
 		
 		//s.scoreFitness(null);
 

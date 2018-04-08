@@ -13,7 +13,20 @@ import java.nio.file.Paths;
 
 public class FileUpload {
 	
-	public static Map<String, Double> fMap = new HashMap<String, Double>();
+	//private Map<String, Double> fMap = new HashMap<String, Double>();
+	
+	public void printMap(){
+		
+		/*for (String name: fMap.keySet()){
+
+            String key =name.toString();
+            String value = fMap.get(name).toString();  
+            System.out.println(key + " " + value);  
+		}*/
+		
+		
+		
+	}
 
 	public List<String> readFileURL() throws IOException{
 		
@@ -64,8 +77,6 @@ public class FileUpload {
 		Map<String, Double> fMap = lines.map(line -> line.split(" ")).collect(Collectors.toMap(line -> line[0], line -> Double.parseDouble(line[1])));
 		
 		lines.close();
-		
-		//System.out.println(fMap.get("THER"));
 		
 		return fMap;
 	}

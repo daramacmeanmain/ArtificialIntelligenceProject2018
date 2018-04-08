@@ -23,7 +23,7 @@ public class SADecrypt {
 		long total = 4224127912L;
 		String gram;
 		double gramVal;
-		//double childScore;
+		double childScore;
 		
 		
 		

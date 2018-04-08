@@ -65,7 +65,7 @@ public class FileUpload {
 		
 		lines.close();
 		
-		//System.out.println(fMap.get("THER"));
+		So system.out.ptintln(fMap.keySet());
 		
 		return fMap;
 	}
