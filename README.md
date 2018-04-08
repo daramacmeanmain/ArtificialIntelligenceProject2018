@@ -9,6 +9,6 @@ The programme allows a user to choose between loading a decrypted text file that
 
 ## Issues
 
-⋅⋅* URL option is present but most of the actual functionality is not implemented.
+* URL option is present but most of the actual functionality is not implemented.
 
-⋅⋅* I was unsuccessful in implementing the simulated annealing algorithm correctly, as a result the programme will only offer the first attempted result of decryption
+* I was unsuccessful in implementing the simulated annealing algorithm correctly, as such the programme will only offer the first attempted result of decryption
