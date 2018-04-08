@@ -2,22 +2,22 @@ package ie.gmit.sw.ai;
 
 import java.awt.Point;
 
-public class SADecrypt {
+public class PlayfairTable {
 	
-	/*private static GenKey gk = new GenKey();
+	private static GenKey gk = new GenKey();
 	@SuppressWarnings("static-access")
 	private static String parent = gk.keyGen();
 	private String[][] table = this.cipherTable(parent);
 	private String fuString;
 	private String output = FileUpload.readFile(fuString);
-	private String decodedOutput = decode(output);*/
+	private String decodedOutput = decode(output);
 	
-	public SADecrypt(){
-		//this.printTable(table);
-		//this.printDecode(decodedOutput);
+	public PlayfairTable(){
+		this.printTable(table);
+		this.printDecode(decodedOutput);
 	}
 	
-	/*public String[][] cipherTable(String key){
+	public String[][] cipherTable(String key){
 		 String[][] playFairTable = new String [5][5];
 		 String keyString = parent;
 		 
@@ -71,23 +71,23 @@ public class SADecrypt {
 	    }
 	    return decoded;
 	  }
- 
- 		private Point getPoint(char c){
+
+		private Point getPoint(char c){
 	    Point pt = new Point(0,0);
 	    for(int i = 0; i < 5; i++)
 	      for(int j = 0; j < 5; j++)
 	        if(c == table[i][j].charAt(0))
 	          pt = new Point(i,j);
 	    return pt;
- 		}
- 		  
- 		  // prints results (encoded and decoded)
- 		  public void printDecode(String dec){
- 		    System.out.println("Decoded text:");
- 		    System.out.println(dec);
- 		  }
+		}
+		  
+		  // prints results (encoded and decoded)
+		  public void printDecode(String dec){
+		    System.out.println("Decoded text:");
+		    System.out.println(dec);
+		  }
 	
- 	private void printTable(String[][] printedTable){
+	private void printTable(String[][] printedTable){
 	    for(int i = 0; i < 5; i++){
 	      for(int j = 0; j < 5; j++){
 	        System.out.print(printedTable[i][j]+" ");
@@ -95,6 +95,6 @@ public class SADecrypt {
 	      System.out.println();
 	    }
 	    System.out.println();
-	  }*/
+	  }
 
 }

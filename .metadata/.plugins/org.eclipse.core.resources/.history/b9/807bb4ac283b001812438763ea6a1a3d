@@ -4,22 +4,22 @@ import java.awt.Point;
 
 public class SADecrypt {
 	
-	/*private static GenKey gk = new GenKey();
+	private static GenKey gk = new GenKey();
 	@SuppressWarnings("static-access")
 	private static String parent = gk.keyGen();
 	private String[][] table = this.cipherTable(parent);
 	private String fuString;
 	private String output = FileUpload.readFile(fuString);
-	private String decodedOutput = decode(output);*/
+	private String decodedOutput = decode(output);
 	
 	public SADecrypt(){
-		//this.printTable(table);
-		//this.printDecode(decodedOutput);
+		this.printTable(table);
+		this.printDecode(decodedOutput);
 	}
 	
-	/*public String[][] cipherTable(String key){
+	public String[][] cipherTable(String key){
 		 String[][] playFairTable = new String [5][5];
-		 String keyString = parent;
+		 String keyString = parent + "A";
 		 
 		 for(int i = 0; i < 5; i++)
 		      for(int j = 0; j < 5; j++)
@@ -95,6 +95,6 @@ public class SADecrypt {
 	      System.out.println();
 	    }
 	    System.out.println();
-	  }*/
+	  }
 
 }

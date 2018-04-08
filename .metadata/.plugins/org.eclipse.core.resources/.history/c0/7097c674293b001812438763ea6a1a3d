@@ -30,7 +30,7 @@ public class GenKey {
 		return generatedString;
 	}*/
 	
-	public static String keyGen() {
+	public String keyGen() {
 		 String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 		 int index;
 		 Random random = ThreadLocalRandom.current();

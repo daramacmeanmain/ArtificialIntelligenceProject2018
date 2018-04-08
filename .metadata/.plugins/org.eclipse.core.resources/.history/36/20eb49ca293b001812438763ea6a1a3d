@@ -15,7 +15,7 @@ public class Runner {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
 		FileUpload fu = new FileUpload();
-		SADecrypt s = new SADecrypt();
+		//SADecrypt sad = new SADecrypt();
 		
 		String filename = "";
 		fu.readFile(filename);

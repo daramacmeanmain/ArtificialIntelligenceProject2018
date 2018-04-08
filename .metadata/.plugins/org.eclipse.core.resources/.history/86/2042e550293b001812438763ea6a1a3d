@@ -30,20 +30,17 @@ public class GenKey {
 		return generatedString;
 	}*/
 	
-	public static String keyGen() {
-		 String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+	public void shuffle(char[] key) {
 		 int index;
 		 Random random = ThreadLocalRandom.current();
-		 char[] key = alphabet.toCharArray();
 		 for (int i = key.length - 1; i > 0; i--) {
-			 index = random.nextInt(i + 1);
-			 if (index != i) {
-				 key[index] ^= key[i];
-				 key[i] ^= key[index];
-				 key[index] ^= key[i];
-			 }
+		 index = random.nextInt(i + 1);
+		 if (index != i) {
+		 key[index] ^= key[i];
+		 key[i] ^= key[index];
+		 key[index] ^= key[i];
 		 }
-		 return new String(key);
-	}
+		 }
+		}
 
 }
