@@ -1,0 +1,72 @@
+package ie.gmit.sw.ai;
+
+import java.util.*;
+import java.io.*;
+
+import java.net.URL;
+
+public class FileUpload {
+	
+	private Map<String, String> fMap = new HashMap<String, int>();
+
+	public List<String> readFileURL() throws IOException{
+		
+		//dummy url test data
+		URL url = new URL("http://www.puzzlers.org/pub/wordlists/pocket.txt");
+		BufferedReader in = new BufferedReader(
+		new InputStreamReader(url.openStream()));
+		String next;
+		
+		while((next = in.readLine()) != null){
+			System.out.println(next);
+		}
+		
+		return null;
+	}
+	
+	@SuppressWarnings("resource")
+	public static String readFile(String filename){
+		
+		filename = "src/hobbitV2.txt";
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(filename));
+	    String next;
+	    StringBuilder sb = new StringBuilder();
+			while ((next = br.readLine()) != null)
+			{
+				sb.append(next).append("\n");
+				next = br.readLine();
+			}
+			
+			String fileString = sb.toString();
+			
+			return fileString;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return filename;
+		
+	}
+	
+	public Map<String, int> fourGram() throws IOException{
+		String fGram = "src/4gram.txt";
+		
+		BufferedReader br = null;
+		br = new BufferedReader(new InputStreamReader(new FileInputStream(fGram)));
+		String next;
+		
+		while ((next = br.readLine()) != null){
+			next = next.substring(1);
+			String word = next.split("\",")[0];
+			//next = next.toLowerCase();
+			fMap.put(word, next);
+		}
+		
+		br.close();
+		return fMap;
+	}
+
+}

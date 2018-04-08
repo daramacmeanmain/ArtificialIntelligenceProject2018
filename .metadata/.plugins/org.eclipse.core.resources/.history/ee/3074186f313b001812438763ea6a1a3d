@@ -1,0 +1,21 @@
+package ie.gmit.sw.ai;
+
+public class SADecrypt {
+	
+	private PlayfairTable pt = new PlayfairTable();
+	private GenKey gk = new GenKey();
+	private int temp;
+	private int transitions;
+	
+	public SADecrypt(int temp, int transitions){
+		this.temp = temp;
+		this.transitions = transitions;
+	}
+	
+	public void logProbability(String parent){
+		for(temp = 10; temp >= 0; temp--){
+			
+		}
+	}
+
+}

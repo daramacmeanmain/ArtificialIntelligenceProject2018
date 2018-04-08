@@ -1,100 +1,54 @@
 package ie.gmit.sw.ai;
 
-import java.awt.Point;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SADecrypt {
 	
-	/*private static GenKey gk = new GenKey();
-	@SuppressWarnings("static-access")
-	private static String parent = gk.keyGen();
-	private String[][] table = this.cipherTable(parent);
-	private String fuString;
-	private String output = FileUpload.readFile(fuString);
-	private String decodedOutput = decode(output);*/
+	private PlayfairTable pt = new PlayfairTable();
+	private GenKey gk = new GenKey();
+	//private FileUpload fu = new FileUpload();
+	//private int temp;
+	//private int transitions;
 	
 	public SADecrypt(){
-		//this.printTable(table);
-		//this.printDecode(decodedOutput);
+		//this.temp = temp;
+		//this.transitions = transitions;
 	}
 	
-	/*public String[][] cipherTable(String key){
-		 String[][] playFairTable = new String [5][5];
-		 String keyString = parent;
-		 
-		 for(int i = 0; i < 5; i++)
-		      for(int j = 0; j < 5; j++)
-		        playFairTable[i][j] = "";
-		 
-		 
-		 for(int k = 0; k < keyString.length(); k++){
-		      boolean repeat = false;
-		      boolean used = false;
-		      for(int i = 0; i < 5; i++){
-		        for(int j = 0; j < 5; j++){
-		          if(playFairTable[i][j].equals("" + keyString.charAt(k))){
-		            repeat = true;
-		          }else if(playFairTable[i][j].equals("") && !repeat && !used){
-		        	  playFairTable[i][j] = "" + keyString.charAt(k);
-		            used = true;
-		          }
-		        }
-		      }
-		    }
-		 
-		 //System.out.println(playFairTable);
-		 
-		return playFairTable;
-		 
-	 }
+	public void scoreFitness(String fitness){
+		String decryptText = pt.getDecode();
+		double score = 0;
+		long total = 4224127912L;
+		
+		for(int i = 0; i < decryptText.length(); i = i + 4){
+			String gram = decryptText.substring(i, i + 4);
+		}
+		
+		
+	}
 	
-	private String decode(String out){
-	    String decoded = "";
-	    for(int i = 0; i < out.length() / 2; i++){
-	      char a = out.charAt(2*i);
-	      char b = out.charAt(2*i+1);
-	      int r1 = (int) getPoint(a).getX();
-	      int r2 = (int) getPoint(b).getX();
-	      int c1 = (int) getPoint(a).getY();
-	      int c2 = (int) getPoint(b).getY();
-	      if(r1 == r2){
-	        c1 = (c1 + 4) % 5;
-	        c2 = (c2 + 4) % 5;
-	      }else if(c1 == c2){
-	        r1 = (r1 + 4) % 5;
-	        r2 = (r2 + 4) % 5;
-	      }else{
-	        int temp = c1;
-	        c1 = c2;
-	        c2 = temp;
-	      }
-	      decoded = decoded + table[r1][c1] + table[r2][c2];
-	    }
-	    return decoded;
-	  }
- 
- 		private Point getPoint(char c){
-	    Point pt = new Point(0,0);
-	    for(int i = 0; i < 5; i++)
-	      for(int j = 0; j < 5; j++)
-	        if(c == table[i][j].charAt(0))
-	          pt = new Point(i,j);
-	    return pt;
- 		}
- 		  
- 		  // prints results (encoded and decoded)
- 		  public void printDecode(String dec){
- 		    System.out.println("Decoded text:");
- 		    System.out.println(dec);
- 		  }
+	public String shuffleKey(String shuffle){
+		int index;
+		 Random random = ThreadLocalRandom.current();
+		 char[] key = shuffle.toCharArray();
+		 for (int i = key.length - 1; i > 0; i--) {
+			 index = random.nextInt(i + 1);
+			 if (index != i) {
+				 key[index] ^= key[i];
+				 key[i] ^= key[index];
+				 key[index] ^= key[i];
+			 }
+		 }
+		 
+		 return new String(key);
+	}
 	
- 	private void printTable(String[][] printedTable){
-	    for(int i = 0; i < 5; i++){
-	      for(int j = 0; j < 5; j++){
-	        System.out.print(printedTable[i][j]+" ");
-	      }
-	      System.out.println();
-	    }
-	    System.out.println();
-	  }*/
+	public void logProbability(String log){
+		for(int i = 10; i >= 0; i--)
+			for(int j = 5000; j >= 0; j--){
+				String child = shuffleKey(gk.parent);
+			}
+	}
 
 }

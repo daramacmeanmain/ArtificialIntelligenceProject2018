@@ -1,4 +1,4 @@
-package ie.gmit.sw.ai;
+/*package ie.gmit.sw.ai;
 
 import java.io.IOException;
 
@@ -23,4 +23,4 @@ public class Runner {
 		
 	}
 
-}
+}*/
